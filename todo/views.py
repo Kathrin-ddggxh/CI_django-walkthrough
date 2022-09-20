@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from .models import Item
 
 # Create your views here.
+
+
 def get_todo_list(request):
-    # takes http request from user
-    # and returns http response that says hello
-    # need to import HttpResponse from django.shortcuts 
-    return render(request, 'todo/todo_list.html')
+    items = Item.objects.all()
+    context = {
+        'items': items
+    }
+    return render(request, 'todo/todo_list.html', context)
