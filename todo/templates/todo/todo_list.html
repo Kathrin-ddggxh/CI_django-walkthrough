@@ -20,9 +20,21 @@
                 <td>{{ item.name }}</td>
                 {% endif %}
                 <td>
+                    <a href="/toggle/{{ item.id }}">
+                        <!-- button can't be descendent of ancorlink - fault in tutorial -->
+                        <button>Toggle</button>
+                    </a>
+                </td>
+                <td>
                     <a href="/edit/{{ item.id }}">
                         <!-- button can't be descendent of ancorlink - fault in tutorial -->
                         <button>Edit</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/delete/{{ item.id }}">
+                        <!-- button can't be descendent of ancorlink - fault in tutorial -->
+                        <button>Delete</button>
                     </a>
                 </td>
             </tr>
